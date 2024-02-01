@@ -26,9 +26,16 @@ public class EnemySpawnManager : MonoBehaviour
             enemyPools.Add(enemyPrefabs[i].tag, new EnemyPool<Transform>(enemyPrefabs[i].GetComponent<Transform>(),
                                                                       startPoolSize,
                                                                       enemyContainer.transform));
+            Debug.Log("Нажмите Space для следующей волны противников");
         }
+    }
 
-        StartNextSpawnStep();
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartNextSpawnStep();
+        }
     }
 
     private void StartNextSpawnStep()
@@ -38,7 +45,6 @@ public class EnemySpawnManager : MonoBehaviour
             StartCoroutine(SpawnEnemiesOnStep(stepSpawnConfigs[currentStep]));
             Debug.Log("ступень спавна " + currentStep);
             currentStep++;
-            StartNextSpawnStep();
         }
         else      
             Debug.Log("Ступени спавна кончились");

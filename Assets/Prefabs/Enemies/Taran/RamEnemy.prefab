@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 785471607078582402}
   m_Layer: 0
   m_Name: RamEnemy
-  m_TagString: ram1
+  m_TagString: Ram1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

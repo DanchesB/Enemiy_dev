@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: -8755904842138258759}
   m_Layer: 0
   m_Name: MeleeEnemy_Red1
-  m_TagString: melee1
+  m_TagString: Melee1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

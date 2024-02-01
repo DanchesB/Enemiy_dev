@@ -1348,7 +1348,7 @@ MonoBehaviour:
     spit1EnemyAmount: 5
     projectile1EnemyAmount: 5
     spawnTime: 10
-  startPoolSize: 30
+  startPoolSize: 10
 --- !u!4 &1399251593
 Transform:
   m_ObjectHideFlags: 0
