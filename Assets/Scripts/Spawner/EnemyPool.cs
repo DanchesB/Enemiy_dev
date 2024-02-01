@@ -6,8 +6,6 @@ public class EnemyPool<TComponent> where TComponent : Component
     private List<TComponent> pool;
     private TComponent prefab;
     private Transform container;
-
-    //???????? ????
     public EnemyPool(TComponent prefab, int poolSize, Transform container)
     {
         this.prefab = prefab;
@@ -27,7 +25,7 @@ public class EnemyPool<TComponent> where TComponent : Component
             if (!pool[i].gameObject.activeSelf)
             {
                 pool[i].gameObject.SetActive(true);
-                Debug.Log("?????? ???? ?? ????" + pool[i]);
+                Debug.Log("Спавн" + pool[i]);
                 return pool[i];
             }
         }
@@ -46,7 +44,7 @@ public class EnemyPool<TComponent> where TComponent : Component
         newObj.gameObject.SetActive(false);
         newObj.transform.SetParent(container);
         pool.Add(newObj);
-        Debug.Log("?????? ???????? ? ??? " + newObj.name);
+        Debug.Log("Добавлены враги " + newObj.name);
         return newObj;
     }
 }

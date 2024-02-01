@@ -49,14 +49,14 @@ public class EnemySpawnManager : MonoBehaviour
         float totalEnemiesToSpawn = stepConfig.GetAllAmountEnemy();
         List<string> enemyTypes = new List<string>();
       
-        for (int i = 0; i < stepConfig.capsuleEnemyAmount; i++)
-            enemyTypes.Add("Capsule");
-        for (int i = 0; i < stepConfig.cubeEnemyAmount; i++)
-            enemyTypes.Add("Cube");
-        for (int i = 0; i < stepConfig.cylinderEnemyAmount; i++)
-            enemyTypes.Add("Cylinder");
-        for (int i = 0; i < stepConfig.sphereEnemyAmount; i++)
-            enemyTypes.Add("Sphere");
+        for (int i = 0; i < stepConfig.melee1EnemyAmount; i++)
+            enemyTypes.Add("Melee1");
+        for (int i = 0; i < stepConfig.ram1EnemyAmount; i++)
+            enemyTypes.Add("Ram1");
+        for (int i = 0; i < stepConfig.spit1EnemyAmount; i++)
+            enemyTypes.Add("Spit1");
+        for (int i = 0; i < stepConfig.projectile1EnemyAmount; i++)
+            enemyTypes.Add("Projectile1");
       
         enemyTypes.Shuffle();
 

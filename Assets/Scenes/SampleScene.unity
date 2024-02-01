@@ -1338,16 +1338,16 @@ MonoBehaviour:
   - {fileID: 1671505387}
   - {fileID: 1334262726}
   stepSpawnConfigs:
-  - capsuleEnemyAmount: 10
-    cubeEnemyAmount: 10
-    cylinderEnemyAmount: 10
-    sphereEnemyAmount: 10
+  - melee1EnemyAmount: 5
+    ram1EnemyAmount: 5
+    spit1EnemyAmount: 5
+    projectile1EnemyAmount: 5
     spawnTime: 60
-  - capsuleEnemyAmount: 20
-    cubeEnemyAmount: 3
-    cylinderEnemyAmount: 3
-    sphereEnemyAmount: 6
-    spawnTime: 20
+  - melee1EnemyAmount: 5
+    ram1EnemyAmount: 5
+    spit1EnemyAmount: 5
+    projectile1EnemyAmount: 5
+    spawnTime: 10
   startPoolSize: 30
 --- !u!4 &1399251593
 Transform:
