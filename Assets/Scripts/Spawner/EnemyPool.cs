@@ -37,7 +37,6 @@ public class EnemyPool<TComponent> where TComponent : Component
         obj.gameObject.SetActive(false);
     }
 
-    //???????? ?????? ? ????
     private TComponent CreateObject()
     {
         TComponent newObj = Object.Instantiate(prefab);

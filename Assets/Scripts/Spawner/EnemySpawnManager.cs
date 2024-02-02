@@ -28,22 +28,16 @@ public class EnemySpawnManager : MonoBehaviour
                                                                       enemyContainer.transform));
             Debug.Log("Ќажмите Space дл€ следующей волны противников");
         }
-    }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartNextSpawnStep();
-        }
+        Debug.Log("ступень спавна " + currentStep);
+        StartNextSpawnStep();
     }
 
     private void StartNextSpawnStep()
     {
         if (currentStep < stepSpawnConfigs.Length)
-        {        
+        {
             StartCoroutine(SpawnEnemiesOnStep(stepSpawnConfigs[currentStep]));
-            Debug.Log("ступень спавна " + currentStep);
             currentStep++;
         }
         else      
@@ -80,6 +74,11 @@ public class EnemySpawnManager : MonoBehaviour
                 Debug.LogWarning("неверный тип врагов: " + enemyType);
             }
         }
+
+        Debug.Log("ступень спавна " + currentStep);
+
+        yield return new WaitForSeconds(stepConfig.spawnTime);
+        StartNextSpawnStep();
     }
 
     private void SpawnEnemyFromPool(EnemyPool<Transform> pool)

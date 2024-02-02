@@ -1338,15 +1338,20 @@ MonoBehaviour:
   - {fileID: 1671505387}
   - {fileID: 1334262726}
   stepSpawnConfigs:
-  - melee1EnemyAmount: 5
-    ram1EnemyAmount: 5
-    spit1EnemyAmount: 5
-    projectile1EnemyAmount: 5
-    spawnTime: 60
-  - melee1EnemyAmount: 5
-    ram1EnemyAmount: 5
-    spit1EnemyAmount: 5
-    projectile1EnemyAmount: 5
+  - melee1EnemyAmount: 10
+    ram1EnemyAmount: 2
+    spit1EnemyAmount: 2
+    projectile1EnemyAmount: 2
+    spawnTime: 10
+  - melee1EnemyAmount: 10
+    ram1EnemyAmount: 2
+    spit1EnemyAmount: 2
+    projectile1EnemyAmount: 2
+    spawnTime: 10
+  - melee1EnemyAmount: 10
+    ram1EnemyAmount: 2
+    spit1EnemyAmount: 2
+    projectile1EnemyAmount: 2
     spawnTime: 10
   startPoolSize: 10
 --- !u!4 &1399251593
