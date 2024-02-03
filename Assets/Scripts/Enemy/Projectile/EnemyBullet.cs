@@ -6,15 +6,23 @@ public class EnemyBullet : MonoBehaviour
 {
     public ProjectileEnemy enemy;
 
-    private float damageArea;
-    private PlayerHealth PlayerHealth;
-    private int damage = 100;
+    [SerializeField] private float damageArea = 10f;
+    private PlayerHealth playerHealth;
+    private int damage;
+    private Vector3 attackPos;
 
-    public void Initialize(PlayerHealth playerHealth, int damage)
+    public void Initialize(PlayerHealth playerHealth, int damage, Vector3 attackPos)
     {
-        this.PlayerHealth = playerHealth;
+        this.playerHealth = playerHealth;
         this.damage = damage;
+        this.attackPos = attackPos;
+        Debug.Log(attackPos);
     }
+
+    /*private void Update()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, attackPos, 10f * Time.deltaTime);
+    }*/
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -28,8 +36,12 @@ public class EnemyBullet : MonoBehaviour
         {
             if (collider.tag == "Player")
             {
-                PlayerHealth.HealthReduce(damage);
+                Debug.Log(transform.position);
+                playerHealth.HealthReduce(damage);
+
             }
         }
+
+        Destroy(gameObject);
     }
 }

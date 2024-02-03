@@ -17,19 +17,19 @@ public class ProjectileEnemy : MonoBehaviour, ICanAttack
     private Transform target;
     private Vector3 attackPos;   
     private GameObject bullet;
-    public EnemyMovement enemyMovement;
+    private EnemyMovement enemyMovement;
     private bool isAttack = false;
     private float timer = 0;
     private float g = 9.8f;
+    public float speed = 10f;
+
+    public AnimationCurve animationCurve;
 
     private void Start()
     {
+        enemyMovement = GetComponent<EnemyMovement>();
         health = enemyMovement.PlayerHealth;
         target = enemyMovement.target;
-        if (health != null )
-        {
-            Debug.Log("Asfdasfasdfasd");
-        }
     }
 
     void StartAttack()
@@ -54,17 +54,17 @@ public class ProjectileEnemy : MonoBehaviour, ICanAttack
         float V2 = (g * (x * x)) / (2 * (y - Mathf.Tan(angleInRagian) * x) * Mathf.Pow(Mathf.Cos(angleInRagian), 2));
         float V = Mathf.Sqrt(Mathf.Abs(V2));
         Vector3 speed = _firePoint.forward * (V - 1);
-        //_explosion.CreateSphere(_playerPosition);
-        //currentPosition = _playerPosition.position;
 
         GameObject newBullet = Instantiate(_bulletPrefab, _firePoint.position, Quaternion.identity);
         newBullet.GetComponent<Rigidbody>().AddForce(speed, ForceMode.VelocityChange);
-        newBullet.GetComponent<EnemyBullet>().Initialize(health, _damage);
-    }
 
-    public void HealthAttack(int damage)
-    {
-        enemyMovement.PlayerHealth.HealthReduce(damage);
+        /*Vector3 launchDirection = (attackPos - transform.position).normalized;
+        newBullet.transform.forward = launchDirection;
+        newBullet.GetComponent<Rigidbody>().AddForce(launchDirection * speed, ForceMode.Impulse);*/
+
+        newBullet.GetComponent<EnemyBullet>().Initialize(health, _damage, attackPos);
+
+
     }
 
     public void AttackProcess()
