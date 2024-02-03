@@ -14,8 +14,8 @@ public class EnemyMovement : MonoBehaviour
 
     public void Initialize(Transform player, PlayerHealth playerHealth)
     {
-        this.target = player;
-        this.PlayerHealth = playerHealth;
+        target = player;
+        PlayerHealth = playerHealth;
 
         try
         {

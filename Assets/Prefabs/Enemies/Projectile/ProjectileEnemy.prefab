@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 1006521680346944358}
   - component: {fileID: -52887942065949764}
   - component: {fileID: 7651707718739861037}
+  - component: {fileID: 7377781806306325987}
   m_Layer: 0
   m_Name: ProjectileEnemy
   m_TagString: Projectile1
@@ -122,6 +123,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7377781806306325987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213254798002941430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9243dbf161676914eae601104979ae09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosion: {fileID: 3653154800330510430, guid: 1e6219bc8d1bee64f925d4b7fab4fd01, type: 3}
+  _bulletPrefab: {fileID: 4844601277317214426, guid: 7899278edca568f4194fa083439e55cc, type: 3}
+  _damage: 14
+  _attackDelay: 1
+  _damageArea: 5
+  _firePoint: {fileID: 1534344807005747685}
+  angle: 60
+  enemyMovement: {fileID: 1006521680346944358}
 --- !u!1 &1957350495977773342
 GameObject:
   m_ObjectHideFlags: 0

@@ -1338,21 +1338,11 @@ MonoBehaviour:
   - {fileID: 1671505387}
   - {fileID: 1334262726}
   stepSpawnConfigs:
-  - melee1EnemyAmount: 10
-    ram1EnemyAmount: 2
-    spit1EnemyAmount: 2
+  - melee1EnemyAmount: 0
+    ram1EnemyAmount: 0
+    spit1EnemyAmount: 0
     projectile1EnemyAmount: 2
-    spawnTime: 10
-  - melee1EnemyAmount: 10
-    ram1EnemyAmount: 2
-    spit1EnemyAmount: 2
-    projectile1EnemyAmount: 2
-    spawnTime: 10
-  - melee1EnemyAmount: 10
-    ram1EnemyAmount: 2
-    spit1EnemyAmount: 2
-    projectile1EnemyAmount: 2
-    spawnTime: 10
+    spawnTime: 3
   startPoolSize: 10
 --- !u!4 &1399251593
 Transform:
@@ -1647,6 +1637,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5996792655074629504, guid: c0c89b32c66c4fe4aba9044d1aa1eabf, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5996792655159789185, guid: c0c89b32c66c4fe4aba9044d1aa1eabf, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1694,6 +1688,10 @@ PrefabInstance:
     - target: {fileID: 5996792655159789186, guid: c0c89b32c66c4fe4aba9044d1aa1eabf, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996792655159789186, guid: c0c89b32c66c4fe4aba9044d1aa1eabf, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5996792655159789186, guid: c0c89b32c66c4fe4aba9044d1aa1eabf, type: 3}
       propertyPath: m_TagString

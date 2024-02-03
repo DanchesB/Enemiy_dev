@@ -9,6 +9,7 @@ public class MelleEnemy : MonoBehaviour, ICanAttack
 {
     private PlayerHealth playerHealth;
     private Transform target;
+    private EnemyMovement enemyMovement;
 
     [SerializeField] private float attackDelay;
     [SerializeField] private int damage;
@@ -18,8 +19,9 @@ public class MelleEnemy : MonoBehaviour, ICanAttack
 
     private void Start()
     {
-        playerHealth = GetComponent<EnemyMovement>().PlayerHealth;
-        target = GetComponent<EnemyMovement>().target;
+        enemyMovement = GetComponent<EnemyMovement>();
+        playerHealth = enemyMovement.PlayerHealth;
+        target = enemyMovement.target;
     }
 
     private void StartAttack()

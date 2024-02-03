@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionMaterial : MonoBehaviour
+public class MaterialExplosion : MonoBehaviour
 {
     [SerializeField] private Material _explosionTexture;
     private Renderer render;
