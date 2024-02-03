@@ -23,8 +23,6 @@ public class ProjectileEnemy : MonoBehaviour, ICanAttack
     private float g = 9.8f;
     public float speed = 10f;
 
-    public AnimationCurve animationCurve;
-
     private void Start()
     {
         enemyMovement = GetComponent<EnemyMovement>();
@@ -41,7 +39,7 @@ public class ProjectileEnemy : MonoBehaviour, ICanAttack
 
     void Trajectory()
     {
-        _firePoint.localEulerAngles = new Vector3(-angle, 0f, 0f);
+/*        _firePoint.localEulerAngles = new Vector3(-angle, 0f, 0f);
 
         Vector3 fromTo = attackPos - transform.position;
         Vector3 fromToXZ = new Vector3(fromTo.x, 0f, fromTo.z);
@@ -53,18 +51,12 @@ public class ProjectileEnemy : MonoBehaviour, ICanAttack
 
         float V2 = (g * (x * x)) / (2 * (y - Mathf.Tan(angleInRagian) * x) * Mathf.Pow(Mathf.Cos(angleInRagian), 2));
         float V = Mathf.Sqrt(Mathf.Abs(V2));
-        Vector3 speed = _firePoint.forward * (V - 1);
+        Vector3 speed = _firePoint.forward * (V - 1);*/
 
         GameObject newBullet = Instantiate(_bulletPrefab, _firePoint.position, Quaternion.identity);
-        newBullet.GetComponent<Rigidbody>().AddForce(speed, ForceMode.VelocityChange);
-
-        /*Vector3 launchDirection = (attackPos - transform.position).normalized;
-        newBullet.transform.forward = launchDirection;
-        newBullet.GetComponent<Rigidbody>().AddForce(launchDirection * speed, ForceMode.Impulse);*/
+/*        newBullet.GetComponent<Rigidbody>().AddForce(speed, ForceMode.VelocityChange);*/
 
         newBullet.GetComponent<EnemyBullet>().Initialize(health, _damage, attackPos);
-
-
     }
 
     public void AttackProcess()

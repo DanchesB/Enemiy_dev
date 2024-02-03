@@ -100,6 +100,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7377781806306325987, guid: 8c4c7814dc89d4b448e18a72fa2ea31d, type: 3}
   damageArea: 4
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.008369446
+      value: 0.100860596
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.27789474
+      value: 0.1599538
+      inSlope: 0.89357173
+      outSlope: 0.89357173
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1566487
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.60922
+      value: 0.13288474
+      inSlope: -0.015335902
+      outSlope: -0.015335902
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0041809
+      value: -0.0070762634
+      inSlope: -1.9805832
+      outSlope: -1.9805832
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.049806025
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  bulletSpeed: 5
+  ballHeigh: 10
 --- !u!135 &4108116128176712574
 SphereCollider:
   m_ObjectHideFlags: 0
