@@ -6,6 +6,10 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     public ProjectileEnemy enemy;
+    public Explosion exp;
+    public GameObject explosionPrefab;
+    public GameObject explosionDamagePrefab;
+    public float timeToDelete = 2f;
 
     [SerializeField] private float damageArea = 10f;
     private PlayerHealth playerHealth;
@@ -13,7 +17,8 @@ public class EnemyBullet : MonoBehaviour
     private Vector3 attackPos;
 
     [SerializeField] private AnimationCurve curve;
-    public float bulletSpeed = 10f;
+    [SerializeField] private float desiredFlightTime = 2f;
+    private float bulletSpeed;
     public float ballHeigh = 10f;
 
     IEnumerator coroutine = null;
@@ -23,6 +28,11 @@ public class EnemyBullet : MonoBehaviour
         this.playerHealth = playerHealth;
         this.damage = damage;
         this.attackPos = attackPos;
+        exp.CreateSphere(attackPos, damageArea, explosionPrefab);
+
+        // –ассчитываем скорость снар€да на основе желаемого времени полЄта и рассто€ни€ до цели
+        bulletSpeed = Vector3.Distance(transform.position, attackPos) / desiredFlightTime;
+
     }
 
     private void Update()
@@ -33,11 +43,21 @@ public class EnemyBullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Damage();
+        exp.DeleteSphere();
+        this.gameObject.SetActive(false);
+        exp.CreateDamageSphere(attackPos, damageArea, explosionDamagePrefab);
+        Invoke("DeleteBullet", timeToDelete);
+    }
+
+    void DeleteBullet()
+    {
+        exp.DeleteDamageSphere();
+        Destroy(this.gameObject);
     }
 
     void Damage()
     {
-        Collider[] player = Physics.OverlapSphere(transform.position, damageArea);
+        Collider[] player = Physics.OverlapSphere(attackPos, damageArea / 2);
         foreach (Collider collider in player)
         {
             if (collider.tag == "Player")
@@ -45,8 +65,6 @@ public class EnemyBullet : MonoBehaviour
                 playerHealth.HealthReduce(damage);
             }
         }
-
-        Destroy(gameObject);
     }
 
     private void Trajectory()
@@ -58,24 +76,25 @@ public class EnemyBullet : MonoBehaviour
         }
     }
 
-    IEnumerator FollowCurve()
+    private IEnumerator FollowCurve()
     {
         Vector3 pathVector = attackPos - transform.position;
         float totalDistance = pathVector.magnitude;
-        pathVector.Normalize();
+        Vector3 normalizedDirection = pathVector.normalized; // Ќормализованный вектор направлени€
 
         float distanceTravelled = 0f;
-        float ballradius = transform.localScale.y / 2f;
+        float ballRadius = transform.localScale.y / 2f;
 
         Vector3 newPosition = transform.position;
 
         while (distanceTravelled <= totalDistance)
         {
-            Vector3 deltaPath = pathVector * (bulletSpeed * Time.deltaTime);
+            Vector3 deltaPath = normalizedDirection * (bulletSpeed * Time.deltaTime);
             newPosition += deltaPath;
             distanceTravelled += deltaPath.magnitude;
 
-            newPosition.y = ballradius + (ballHeigh * curve.Evaluate(distanceTravelled / totalDistance));
+            float normalizedTime = distanceTravelled / totalDistance;
+            newPosition.y = ballRadius + (ballHeigh * curve.Evaluate(normalizedTime));
 
             transform.position = newPosition;
 
@@ -85,3 +104,4 @@ public class EnemyBullet : MonoBehaviour
         coroutine = null;
     }
 }
+

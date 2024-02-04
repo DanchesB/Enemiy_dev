@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 328991406958612660}
   - component: {fileID: 984804500532316673}
   - component: {fileID: 875856625244165682}
+  - component: {fileID: -9085788235839483561}
   - component: {fileID: 4108116128176712574}
-  - component: {fileID: 7159393507443432504}
+  - component: {fileID: -6350322666536376062}
   m_Layer: 6
   m_Name: Bullet 1
   m_TagString: Untagged
@@ -99,13 +100,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7377781806306325987, guid: 8c4c7814dc89d4b448e18a72fa2ea31d, type: 3}
-  damageArea: 4
+  exp: {fileID: -9085788235839483561}
+  explosionPrefab: {fileID: 656555888833889693, guid: 1e6219bc8d1bee64f925d4b7fab4fd01, type: 3}
+  explosionDamagePrefab: {fileID: 656555888833889693, guid: 9425ac54285e538418f511d42277e9b7, type: 3}
+  timeToDelete: 2
+  damageArea: 5
   curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.008369446
-      value: 0.100860596
+      time: 0
+      value: 0
       inSlope: 2
       outSlope: 2
       tangentMode: 0
@@ -113,22 +118,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.27789474
-      value: 0.1599538
-      inSlope: 0.89357173
-      outSlope: 0.89357173
+      time: 0.52682674
+      value: 0.38803095
+      inSlope: -0.003306521
+      outSlope: -0.003306521
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.1566487
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.60922
-      value: 0.13288474
-      inSlope: -0.015335902
-      outSlope: -0.015335902
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.25602815
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1.0041809
@@ -144,6 +140,18 @@ MonoBehaviour:
     m_RotationOrder: 4
   bulletSpeed: 5
   ballHeigh: 10
+--- !u!114 &-9085788235839483561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908034572427650809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edcd443c2d338f940b4f3a6fdb4b5d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &4108116128176712574
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -165,7 +173,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7159393507443432504
+--- !u!54 &-6350322666536376062
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
