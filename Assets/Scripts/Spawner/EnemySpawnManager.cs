@@ -26,7 +26,6 @@ public class EnemySpawnManager : MonoBehaviour
             enemyPools.Add(enemyPrefabs[i].tag, new EnemyPool<Transform>(enemyPrefabs[i].GetComponent<Transform>(),
                                                                       startPoolSize,
                                                                       enemyContainer.transform));
-            Debug.Log("Нажмите Space для следующей волны противников");
         }
 
         Debug.Log("ступень спавна " + currentStep);
@@ -40,8 +39,10 @@ public class EnemySpawnManager : MonoBehaviour
             StartCoroutine(SpawnEnemiesOnStep(stepSpawnConfigs[currentStep]));
             currentStep++;
         }
-        else      
+        else
+        {
             Debug.Log("Ступени спавна кончились");
+        }
     }
 
     private IEnumerator SpawnEnemiesOnStep(StepSpawnConfig stepConfig)
@@ -49,15 +50,15 @@ public class EnemySpawnManager : MonoBehaviour
         float totalEnemiesToSpawn = stepConfig.GetAllAmountEnemy();
         List<string> enemyTypes = new List<string>();
       
-        for (int i = 0; i < stepConfig.melee1EnemyAmount; i++)
-            enemyTypes.Add("Melee1");
-        for (int i = 0; i < stepConfig.ram1EnemyAmount; i++)
-            enemyTypes.Add("Ram1");
-        for (int i = 0; i < stepConfig.spit1EnemyAmount; i++)
-            enemyTypes.Add("Spit1");
-        for (int i = 0; i < stepConfig.projectile1EnemyAmount; i++)
-            enemyTypes.Add("Projectile1");
-      
+        for (int i = 0; i < stepConfig.meleeEnemyAmount; i++)
+            enemyTypes.Add("Melee");
+        for (int i = 0; i < stepConfig.ramEnemyAmount; i++)
+            enemyTypes.Add("Ram");
+        for (int i = 0; i < stepConfig.spitEnemyAmount; i++)
+            enemyTypes.Add("Spit");
+        for (int i = 0; i < stepConfig.projectileEnemyAmount; i++)
+            enemyTypes.Add("Projectile");
+        
         enemyTypes.Shuffle();
 
         float spawnDelay = stepConfig.spawnTime / totalEnemiesToSpawn;

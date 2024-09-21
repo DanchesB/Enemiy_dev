@@ -4,11 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Melee1
-  - Undefined
-  - Projectile1
-  - Spit1
-  - Ram1
+  - Melee
+  - Ram
+  - Spit
+  - Projectile
   layers:
   - Default
   - TransparentFX
