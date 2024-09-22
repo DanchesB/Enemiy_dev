@@ -8,6 +8,9 @@ TagManager:
   - Ram
   - Spit
   - Projectile
+  - Target
+  - Obstacle
+  - PatrolAI
   layers:
   - Default
   - TransparentFX

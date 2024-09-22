@@ -3,14 +3,14 @@ using System;
 [Serializable]
 public class StepSpawnConfig 
 {
-    public int meleeEnemyAmount;
-    public int ramEnemyAmount;
-    public int spitEnemyAmount;   
-    public int projectileEnemyAmount;
+    public int melee1EnemyAmount;
+    public int ram1EnemyAmount;
+    public int spit1EnemyAmount;   
+    public int projectile1EnemyAmount;
     public float spawnTime;
 
     public float GetAllAmountEnemy()
     {
-        return meleeEnemyAmount + ramEnemyAmount + spitEnemyAmount + projectileEnemyAmount;
+        return melee1EnemyAmount + ram1EnemyAmount + spit1EnemyAmount + projectile1EnemyAmount;
     }
 }
