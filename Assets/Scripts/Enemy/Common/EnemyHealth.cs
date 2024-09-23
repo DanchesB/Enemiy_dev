@@ -5,7 +5,6 @@ public class EnemyHealth : MonoBehaviour
     private float health;
     [SerializeField] private float maxHealth;
 
-    private bool isDead;
 
     void Awake()
     {
@@ -29,7 +28,6 @@ public class EnemyHealth : MonoBehaviour
     private void Death()
     {
         Debug.Log("Hitted object dead");
-        isDead = true;
     }
 
     private void DrawCurrentHealth()
