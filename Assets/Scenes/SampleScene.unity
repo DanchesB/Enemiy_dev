@@ -1685,6 +1685,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 963194227}
     - target: {fileID: 7038924248129028802, guid: c0c89b32c66c4fe4aba9044d1aa1eabf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038924248129028802, guid: c0c89b32c66c4fe4aba9044d1aa1eabf, type: 3}
       propertyPath: unlockedWeapons.Array.data[0]
       value: 
       objectReference: {fileID: 3489772857529866654, guid: f8ad41710fc2003498bc665dd2879a8f, type: 3}

@@ -121,7 +121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &253336943745753814
 Transform:
   m_ObjectHideFlags: 0
@@ -150,3 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b5902ed3f619647be74de1ddd5c987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: 
+  bulletPrefab: {fileID: 0}
+  fireRate: 0
